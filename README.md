@@ -4,14 +4,7 @@
 
 # Laravel 11 Vue 3 Vite 5, Inertia, Ziggy
 
-# I hate outdated boilerplates so I will make sure this is always upgraded to the latest Core Components, whatever you choose to add in thereafter is up to you
 
-# The project was created to save myself time for redoing the same things all over again when starting a new Laravel/Vue project.
-
-# The main goal of this project is to reduce code and make everything simpler for bootstrapping new projects. 
-
-# Remember Vite 5 required you to import components with the .vue extension. 
-# Also Laravel 11 the default DB is sqlite, be sure to change this to MYSQL or MariaDB is required /config/database.php
 
 The project is built with the following components:
 
@@ -91,23 +84,11 @@ SESSION_DOMAIN=YOURFOLDERNAME.(Whatever you have set in Laragon .test  .local .m
 
 Pull requests are welcome, feel free to contribute to this project.
 
-## ⚡️ License
+# I hate outdated boilerplates so I will make sure this is always upgraded to the latest Core Components, whatever you choose to add in thereafter is up to you
 
-```
-Copyright (C) 2024 413D3Z (https://413d3z.com)
+# The project was created to save myself time for redoing the same things all over again when starting a new Laravel/Vue project.
 
-This file has Laravel 11, Vue 3, Inertia, Tailwind and Vite 5
+# The main goal of this project is to reduce code and make everything simpler for bootstrapping new projects. 
 
-Laravel 11, Vue 3, Inertia, Tailwind and Vite 5 is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
-
-Laravel 11, Vue 3, Inertia, Tailwind and Vite 5 is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with Laravel 11, Vue 3, Inertia, Tailwind and Vite 5. If not, see <https://www.gnu.org/licenses/>.
-```
+# Remember Vite 5 required you to import components with the .vue extension. 
+# Also Laravel 11 the default DB is sqlite, be sure to change this to MYSQL or MariaDB is required /config/database.php
