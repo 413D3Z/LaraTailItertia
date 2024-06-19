@@ -1,66 +1,113 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://www.413d3z.com" target="_blank"><img src="https://avatars.githubusercontent.com/u/28901773?v=4" width="400"></a>
 </p>
 
-## About Laravel
+# Laravel 11 Vue 3 Vite 5, Inertia, Ziggy
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# I hate outdated boilerplates so I will make sure this is always upgraded to the latest Core Components, whatever you choose to add in thereafter is up to you
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# The project was created to save myself time for redoing the same things all over again when starting a new Laravel/Vue project.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# The main goal of this project is to reduce code and make everything simpler for bootstrapping new projects. 
 
-## Learning Laravel
+# Remember Vite 5 required you to import components with the .vue extension. 
+# Also Laravel 11 the default DB is sqlite, be sure to change this to MYSQL or MariaDB is required /config/database.php
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The project is built with the following components:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Vue 3
+- Vite 5
+- Laravel Framework 11
+- Tailwind
+- Inertia
+- Ziggy
+## ⚡️ How to install
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Installation is simple. Just like your ordinary Laravel app.
 
-## Laravel Sponsors
+1. `git clone`
+2. `cd vueravelite`
+3. `composer install`
+4. `cp .env.example .env`
+5. `php artisan key:generate`   
+6. `npm install`
+7. `npm run watch` (or if production `npm run build`)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## ⚡️ How it works
 
-### Premium Partners
+### ➡️ Theming
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+The project supports theming, you can set a global color for the application theme, it can be done in `tailwind.config.js`.
 
-## Contributing
+```js
+module.exports = {
+    // ...
+    theme: {
+        extend: {
+            colors: {
+                theme: colors.blue,
+                danger: colors.red
+            }
+        }
+    },
+    //...
+};
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### ➡️ Authentication
 
-## Code of Conduct
+The project ships with No Authetication as personally I like to build my own depending on the circumstance
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### ➡️ Structure
 
-## License
+The front-end code is located in `resources/js`. The code is organized in different directories to make things more readable.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+### ➡️ CORS
+
+Please make sure you have APP_URL, SANCTUM_STATEFUL_DOMAINS and SESSION_DOMAIN set correctly in [.env]
+
+#### Normal domain
+
+```
+APP_URL=http://413d3z.com
+
+SANCTUM_STATEFUL_DOMAINS=413d3z.com
+SESSION_DOMAIN=413d3z.com
+```
+
+#### Development if using Laragon
+
+```
+APP_URL=http://YOURFOLDERNAME.(Whatever you have set in Laragon .test  .local .muhahaha ??)
+
+SANCTUM_STATEFUL_DOMAINS=YOURFOLDERNAME.(Whatever you have set in Laragon .test  .local .muhahaha ??)
+SESSION_DOMAIN=YOURFOLDERNAME.(Whatever you have set in Laragon .test  .local .muhahaha ??)
+```
+
+## ⚡️ Contributions
+
+Pull requests are welcome, feel free to contribute to this project.
+
+## ⚡️ License
+
+```
+Copyright (C) 2024 413D3Z (https://413d3z.com)
+
+This file has Laravel 11, Vue 3, Inertia, Tailwind and Vite 5
+
+Laravel 11, Vue 3, Inertia, Tailwind and Vite 5 is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+Laravel 11, Vue 3, Inertia, Tailwind and Vite 5 is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Laravel 11, Vue 3, Inertia, Tailwind and Vite 5. If not, see <https://www.gnu.org/licenses/>.
+```
