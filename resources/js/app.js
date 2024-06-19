@@ -1,23 +1,27 @@
-import { createApp, h } from "vue";
-import { createInertiaApp, Link, Head } from "@inertiajs/inertia-vue3";
-import { InertiaProgress } from "@inertiajs/progress";
-
-import { ZiggyVue } from "ziggy";
-import { Ziggy } from "./ziggy";
-
-InertiaProgress.init();
-
+import '../css/app.css';
+import { createApp, h } from 'vue';
+import { createInertiaApp } from '@inertiajs/vue3';
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+import { ZiggyVue } from '../../vendor/tightenco/ziggy';
+import { createPinia } from 'pinia';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faClipboardList, faUserCheck, faWallet, faFileAlt, faArrowRight, faShieldAlt, faDollarSign, faRocket, faUserFriends, faGlobe, faEnvelope, faBell, faMoneyCheckAlt, faMagnifyingGlass, faCloudUpload, faUserPlus, faPlus, faImage, faFileImage, faSmile, faThumbsUp, faMicrophone, faPaperclip, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+library.add(faClipboardList, faUserCheck, faWallet, faFileAlt, faArrowRight, faShieldAlt, faDollarSign, faRocket, faUserFriends, faGlobe, faEnvelope, faBell, faMoneyCheckAlt, faMagnifyingGlass, faCloudUpload, faUserPlus, faPlus, faImage, faFileImage, faSmile, faThumbsUp, faMicrophone, faPaperclip, faPaperPlane);
+const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const pinia = createPinia();
 createInertiaApp({
-    resolve: async (name) => {
-        return (await import(`./Pages/${name}`)).default;
-    },
+    title: (title) => `${title} - ${appName}`,
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
     setup({ el, App, props, plugin }) {
-        createApp({ render: () => h(App, props) })
+        return createApp({ render: () => h(App, props) })
+            .component('font-awesome-icon', FontAwesomeIcon)
             .use(plugin)
+            .use(pinia)
             .use(ZiggyVue, Ziggy)
-            .component("Link", Link)
-            .component("Head", Head)
-            .mixin({ methods: { route } })
             .mount(el);
+    },
+    progress: {
+        color: '#4B5563',
     },
 });
