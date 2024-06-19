@@ -19,7 +19,7 @@ The project is built with the following components:
 Installation is simple. Just like your ordinary Laravel app.
 
 1. `git clone`
-2. `cd vueravelite`
+2. `cd YOUPROJECTNAME`
 3. `composer install`
 4. `cp .env.example .env`
 5. `php artisan key:generate`   
